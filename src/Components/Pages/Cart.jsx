@@ -11,7 +11,7 @@ const Cart = () => {
   console.log(products)
   const dispatch = useDispatch();
 
-  const subTotal = products.reduce((acc, product) => {
+  const total = products.reduce((acc, product) => {
     acc += product.price * product.quantity;
     return acc;
   },0)
@@ -114,7 +114,7 @@ const Cart = () => {
                   <div className="flex justify-between">
                     <span className="text-slate-600">Subtotal</span>
                     <span className="font-semibold">
-                      ${subTotal}
+                      ${total}
                     </span>
                   </div>
                   <div className="flex justify-between">
@@ -132,7 +132,7 @@ const Cart = () => {
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-medium">Total</span>
                   <span className="text-2xl text-[#3525cd] font-bold">
-                    ${subTotal}
+                    ${total}
                   </span>
                 </div>
                 <button className="bg-[#3525cd] hover:bg-[#281ba8] text-white font-semibold py-3.5 rounded-xl transition-colors w-full">

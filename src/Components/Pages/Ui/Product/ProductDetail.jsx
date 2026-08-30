@@ -26,13 +26,13 @@ const ProductDetail = () => {
     queryKey: ["product", id],
     queryFn: () => getProduct(id),
   });
+  const [selectedImg, setSelectedImg] = useState();
 
   useEffect(() => {
     setSelectedImg(product?.images[0]);
   }, [product?.images]);
 
   console.log(product);
-  const [selectedImg, setSelectedImg] = useState();
 
   if (isLoading) return <SkeletonLosder />;
 
@@ -118,7 +118,7 @@ const Detail = ({ product }) => {
     shippingInformation,
     warrantyInformation,
     returnPolicy,
-    stock,  
+    stock,
   } = product;
 
   const [quantity, setQuantity] = useState(1);
@@ -233,7 +233,8 @@ const Detail = ({ product }) => {
 
         <button
           className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl flex items-center justify-center gap-2 shadow-sm transition-colors"
-          onClick={handleAddToCart}>
+          onClick={handleAddToCart}
+        >
           <IoCartOutline className="text-xl" /> Add to Cart
         </button>
 

@@ -8,14 +8,14 @@ const Rating = ({onChange}) => {
   return (
     <div className="py-3">
       <button
-        className="text-[#2D3447] font-bold text-lg flex items-center justify-between w-full md:w-40"
+        className="text-[#2D3447] font-bold text-[14px] md:text-lg flex items-center justify-between w-full md:w-40"
         onClick={() => setHide((prev) => !prev)}
       >
         Rating
         {isHide ? (
-          <RiArrowDropDownLine className="text-2xl" />
+          <RiArrowDropDownLine className="text-xl md:text-2xl" />
         ) : (
-          <RiArrowDropUpLine className="text-2xl" />
+          <RiArrowDropUpLine className="text-xl md:text-2xl" />
         )}
       </button>
     {!isHide && (

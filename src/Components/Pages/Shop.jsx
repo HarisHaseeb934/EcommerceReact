@@ -80,7 +80,7 @@ const Shop = () => {
   return (
     <section className="w-full">
       {alreadyAdded.show && <Alert message = {alreadyAdded.message} className = {alreadyAdded.className}/>}
-      <div className="max-w-6xl w-full m-auto flex flex-col md:flex-row gap-4 p-3">
+      <div className="max-w-[90%] w-full m-auto flex flex-col md:flex-row gap-4 md:p-3">
         <Filter
           setCategory={setCateogry}
           setPriceRange={setPriceRange}

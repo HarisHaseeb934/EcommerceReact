@@ -11,7 +11,7 @@ const Home = () => {
           <h2 className="text-on-surface-variant text-headline-md">
             Discover the latest in premium electronics and home goods
           </h2>
-          <NavLink to={"/shop"} className="block w-[200px] bg-primary py-3 px-5 text-body-sm font-semibold text-on-primary rounded-lg text-center">
+          <NavLink to={"/shop"} className="block w-50 bg-primary py-3 px-5 text-body-sm font-semibold text-on-primary rounded-lg text-center">
             Explore Collection
           </NavLink>
         </div>

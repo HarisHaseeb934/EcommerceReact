@@ -44,7 +44,7 @@ const Cart = () => {
                     key={id}
                     className="flex gap-4 rounded-2xl p-4 bg-white shadow-sm"
                   >
-                    <div className="bg-slate-100 w-28 h-28 md:w-36 md:h-36 rounded-xl flex-shrink-0 overflow-hidden">
+                    <div className="bg-slate-100 w-28 h-28 md:w-36 md:h-36 rounded-xl shrink-0 overflow-hidden">
                       <img
                         src={thumbnail}
                         alt={title}
@@ -77,7 +77,7 @@ const Cart = () => {
                           >
                             -
                           </button>
-                          <span className="font-semibold text-slate-800 text-center min-w-[20px]">
+                          <span className="font-semibold text-slate-800 text-center min-w-5">
                             {quantity}
                           </span>
                           <button
@@ -125,11 +125,11 @@ const Cart = () => {
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center">
                   <span className="text-lg font-medium">Total</span>
-                  <span className="text-2xl text-[#3525cd] font-bold">
+                  <span className="text-2xl text-primary font-bold">
                     ${total}
                   </span>
                 </div>
-                <button className="bg-[#3525cd] hover:bg-[#281ba8] text-white font-semibold py-3.5 rounded-xl transition-colors w-full">
+                <button className="bg-primary hover:bg-[#281ba8] text-white font-semibold py-3.5 rounded-xl transition-colors w-full">
                   Proceed To Checkout
                 </button>
                 <div className="flex justify-center items-center gap-1.5 text-slate-500 text-xs">

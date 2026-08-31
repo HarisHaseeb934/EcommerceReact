@@ -24,3 +24,8 @@ export const getCategory = async(slug) => {
     return response.data;
 }
 
+export const getSearchData = async(product) => {
+    const response = await api.get(`/products/search?q=${product}`);
+    return response.data;
+}
+

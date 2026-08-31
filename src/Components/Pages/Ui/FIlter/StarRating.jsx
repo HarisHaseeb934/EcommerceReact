@@ -7,6 +7,7 @@ const StarRating = ({
   readOnly = false,
   onChange,
   size = 24,
+  className = "text-amber-400"
 }) => {
   const [rating, setRating] = useState(initialRating);
   const [hoverRating, setHoverRating] = useState(null);
@@ -68,7 +69,7 @@ const StarRating = ({
         }}
       >
         {Array.from({ length: maxRating }).map((_, index) => {
-          return <Star key={`gold-${index}`} className={"text-amber-400"} size = {size}/>;
+          return <Star key={`gold-${index}`} className={className} size = {size}/>;
         })}
       </div>
     </button>

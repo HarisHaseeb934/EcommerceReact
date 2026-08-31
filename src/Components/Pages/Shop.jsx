@@ -6,6 +6,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { SkeletonLosder } from "./Ui/SekeltonLoader";
+import Alert from "./Ui/Alert"
 
 const Shop = () => {
   const [category, setCateogry] = useState([]);
@@ -14,6 +15,12 @@ const Shop = () => {
   const [skip, setSkip] = useState(0);
 
   // const filter = {category, priceRange, rating, skip};
+
+  const [alreadyAdded, setAlreadyAdded] = useState({
+    message: "",
+    className: "",
+    show: false,
+  });
 
   const {
     data: products,
@@ -65,13 +72,14 @@ const Shop = () => {
       filterPrice(product) && filterRating(product) && filterCategory(product),
   );
 
-  console.log(products);
-
+  // console.log(products);
+  
   if (isLoading) return <SkeletonLosder />;
   if (isError) return <h1>{error.message}</h1>;
 
   return (
     <section className="w-full">
+      {alreadyAdded.show && <Alert message = {alreadyAdded.message} className = {alreadyAdded.className}/>}
       <div className="max-w-6xl w-full m-auto flex flex-col md:flex-row gap-4 p-3">
         <Filter
           setCategory={setCateogry}
@@ -84,7 +92,7 @@ const Shop = () => {
               {filter.map((product) => {
                 return (
                   <li key={product.id}>
-                    <ProductCard {...product} />
+                    <ProductCard product={product} setAlreadyAdded={setAlreadyAdded} alreadyAdded={alreadyAdded}/>
                   </li>
                 );
               })}

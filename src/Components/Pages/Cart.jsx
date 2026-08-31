@@ -7,8 +7,8 @@ import {
 } from "../Store/Cart/cartSlice";
 
 const Cart = () => {
-  const { products = [] } = useSelector((state) => state.cart);
-  console.log(products)
+  const { products } = useSelector((state) => state.cart);
+  // console.log(products)
   const dispatch = useDispatch();
 
   const total = products.reduce((acc, product) => {
@@ -17,7 +17,7 @@ const Cart = () => {
   },0)
 
   return (
-    <section className="w-full min-h-screen bg-[#F2F3FF]">
+    <section className="w-full bg-[#F2F3FF]">
       <div className="max-w-7xl w-full mx-auto flex flex-col p-4 md:p-10 gap-6">
         <div>
           <h1 className="text-3xl md:text-5xl font-medium">Your Cart</h1>
@@ -27,13 +27,7 @@ const Cart = () => {
           </p>
         </div>
 
-        {products.length === 0 ? (
-          <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
-            <p className="text-slate-500 text-lg">
-              Your cart is currently empty.
-            </p>
-          </div>
-        ) : (
+        
           <div className="flex w-full justify-between gap-6 flex-col lg:flex-row items-start">
             <ul className="flex flex-col gap-4 w-full lg:w-2/3">
               {products.map((product) => {
@@ -96,7 +90,7 @@ const Cart = () => {
 
                         <button
                           className="text-red-500 hover:text-red-700 font-semibold text-sm transition-colors"
-                          onClick={() => removeFromCart(product)}
+                          onClick={() => dispatch(removeFromCart(product))}
                         >
                           Remove
                         </button>
@@ -107,7 +101,7 @@ const Cart = () => {
               })}
             </ul>
 
-            <div className="bg-white flex flex-col w-full lg:w-1/3 rounded-2xl p-6 shadow-sm border border-slate-100 gap-6">
+            {products.length> 0 && <div className="bg-white flex flex-col w-full lg:w-1/3 rounded-2xl p-6 shadow-sm border border-slate-100 gap-6">
               <div className="flex flex-col gap-4">
                 <h2 className="font-semibold text-xl">Order Summary</h2>
                 <div className="flex flex-col gap-2 border-b border-slate-200 pb-4 text-sm md:text-base">
@@ -143,9 +137,9 @@ const Cart = () => {
                   <span>Secure encrypted checkout</span>
                 </div>
               </div>
-            </div>
+            </div>}
           </div>
-        )}
+        
       </div>
     </section>
   );

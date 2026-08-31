@@ -47,7 +47,7 @@ const CategoryProduct = () => {
               filterproduct.map((product) => {
                 return (
                   <li key={product.id}>
-                    <ProductCard {...product} />
+                    <ProductCard product = {product} />
                   </li>
                 );
               })}

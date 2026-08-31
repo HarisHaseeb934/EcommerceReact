@@ -7,11 +7,10 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const {products} = useSelector((state) => state.cart);
-  const [cartQuantity, setCartQuantity] = useState(products.length)
-  useEffect(() => {
-    setCartQuantity(products.length)
-  },[products])
+  const { products } = useSelector((state) => state.cart);
+  const { favouritesProducts } = useSelector((state) => state.favourites);
+  const cartQuantity = products.length;
+  const favQuantity = favouritesProducts.length;
 
   return (
     <header className="w-full sticky top-0 z-50 p-3 md:h-auto h-33 backdrop-blur-xl">
@@ -33,10 +32,12 @@ const Header = () => {
           </button>
         </form>
         <div className="flex items-baseline text-2xl gap-5 md:gap-7">
-          <NavLink className={`relative`} to={"/favorites"}>
-            <span className="absolute -top-2 size-4 -right-2 text-[12px] bg-blue-500 rounded-full text-white md:size-5 flex items-center justify-center">
-              0
-            </span>
+          <NavLink className={`relative`} to={"/favourites"}>
+            {favQuantity > 0 && (
+              <span className="absolute -top-2 size-4 -right-2 text-[12px] bg-blue-500 rounded-full text-white md:size-5 flex items-center justify-center">
+                {favQuantity}
+              </span>
+            )}
             <CiHeart />
           </NavLink>
           <NavLink className={`relative`} to={"/cart"}>

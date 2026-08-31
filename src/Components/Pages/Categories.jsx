@@ -19,7 +19,6 @@ const Categories = () => {
   const handleNavigate = (slug) => {
     navigate(`/categories/${slug}`);
   };
-
   return (
     <section className="w-full">
       <div className="w-full max-w-6xl p-2 m-auto">

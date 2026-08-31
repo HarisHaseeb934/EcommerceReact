@@ -3,15 +3,15 @@ import { NavLink } from "react-router-dom";
 const Home = () => {
   return (
     <section className="bg-[url(BG.jpg)] bg-center bg-no-repeat bg-fill bg-cover">
-      <div className="bg-linear-to-t from-[#faf8ff]/80 via-[#faf8ff]/40 to-transparent">
-        <div className="m-auto max-w-xl text-center py-25 flex flex-col justify-center items-center">
-          <h1 className="text-[#131B2E] text-2xl sm:text-3xl md:text-5xl font-bold my-2">
+      <div className="bg-linear-to-t from-surface/80 via-surface/40 to-transparent">
+        <div className="m-auto max-w-container-max text-center py-20 px-margin-mobile md:px-margin-desktop flex flex-col justify-center items-center gap-stack-md">
+          <h1 className="text-on-surface text-display-lg-mobile md:text-display-lg">
             Upgrade Your Lifestyle
           </h1>
-          <h2 className="text-[#464555] text-xl sm:text-2xl font-semibold my-2">
+          <h2 className="text-on-surface-variant text-headline-md">
             Discover the latest in premium electronics and home goods
           </h2>
-          <NavLink to={"/shop"} className="block w-[200px] bg-[#3525CD] py-3 px-5 text-[14px] my-2 font-semibold text-white rounded-xl">
+          <NavLink to={"/shop"} className="block w-[200px] bg-primary py-3 px-5 text-body-sm font-semibold text-on-primary rounded-lg text-center">
             Explore Collection
           </NavLink>
         </div>

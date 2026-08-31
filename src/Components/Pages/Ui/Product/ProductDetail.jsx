@@ -32,7 +32,7 @@ const ProductDetail = () => {
     setSelectedImg(product?.images[0]);
   }, [product?.images]);
 
-  console.log(product);
+  // console.log(product);
 
   if (isLoading) return <SkeletonLosder />;
 
@@ -171,7 +171,7 @@ const Detail = ({ product }) => {
     }
   };
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <div className="flex flex-col h-full gap-10">

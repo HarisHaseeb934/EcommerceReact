@@ -21,7 +21,7 @@ const CategoryCheck = ({ onChange }) => {
     onChange(updated);
   }
 
-  console.log(categories)
+  // console.log(categories)
 
   return (
     <div className="py-3 flex flex-col gap-3">

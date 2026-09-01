@@ -151,7 +151,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className="bg-primary p-1 md:p-1.5 text-xl text-white rounded-full hover:opacity-90 transition-opacity"
-            to="/profile"
+            to="/login"
           >
             <IoPersonOutline className="text-[16px] md:text-lg" />
           </NavLink>

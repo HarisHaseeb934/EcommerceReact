@@ -11,9 +11,11 @@ const Input = ({
 }) => {
   return (
     <div className={div}>
-      <label htmlFor={htmlFor} className={label}>
-        {title}
-      </label>
+      {title && (
+        <label htmlFor={htmlFor} className={label}>
+          {title}
+        </label>
+      )}
       <div className={input}>
         {children}
         <input

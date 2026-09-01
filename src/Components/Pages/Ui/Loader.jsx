@@ -1,6 +1,6 @@
 export const Loader = () => {
   return (
-    <div className="w-2xs border-blue-500 rounded-xl flex flex-col gap-3 shadow-xl">
+    <div className="w-35 md:w-2xs border-blue-500 rounded-xl flex flex-col gap-3 shadow-xl">
       <div className="bg-gray-500 w-full h-[200px] animate-pulse"></div>
       <div className="flex flex-col gap-3 p-3">
         <div className="bg-gray-500 w-[90px] p-2 rounded-2xl animate-pulse"></div>

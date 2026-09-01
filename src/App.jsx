@@ -12,6 +12,7 @@ import { store } from "./Components/Store/store";
 import { Provider } from 'react-redux';
 import Favourites from "./Components/Pages/Favourites";
 import Checkout from "./Components/Pages/Checkout";
+import SignIn from "./Components/Pages/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout/>,
+      },
+      {
+        path: "/login",
+        element: <SignIn/>,
       },
     ],
   },

@@ -11,6 +11,7 @@ import Cart from "./Components/Pages/Cart";
 import { store } from "./Components/Store/store";
 import { Provider } from 'react-redux';
 import Favourites from "./Components/Pages/Favourites";
+import Checkout from "./Components/Pages/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/favourites",
         element: <Favourites/>,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout/>,
       },
     ],
   },

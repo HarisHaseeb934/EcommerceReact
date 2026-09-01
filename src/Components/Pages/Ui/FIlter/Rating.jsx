@@ -19,7 +19,7 @@ const Rating = ({onChange}) => {
         )}
       </button>
     {!isHide && (
-        <div className="transition transition-discrete translate-y-0 opacity-100 starting:-translate-y-2 starting:opacity-0">
+        <div className="my-2 transition transition-discrete translate-y-0 opacity-100 starting:-translate-y-2 starting:opacity-0">
             <div>
                 <StarRating initialRating={5} onChange={(value) => onChange(value)}/>
             </div>

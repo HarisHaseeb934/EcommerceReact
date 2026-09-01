@@ -28,7 +28,7 @@ const Categories = () => {
               return (
                 <li
                   key={index}
-                  className="shadow-xl border border-blue-200 hover:scale-103 not-first:inline-block text-slate-700 group p-2 px-3 rounded-2xl hover:-translate-y-1 transition-all"
+                  className="shadow-xl text-xs md:text-xl border border-primary hover:scale-103 text-slate-700 group p-2 px-3 rounded-2xl hover:-translate-y-1 transition-all"
                   onClick={() => handleNavigate(category.slug)}
                 >
                   {category.name}

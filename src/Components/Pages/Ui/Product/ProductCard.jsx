@@ -93,7 +93,7 @@ const ProductCard = ({ product, setAlreadyAdded, alreadyAdded }) => {
 
   return (
     <div
-      className="group flex w-40 md:w-auto flex-col hover:-translate-y-1 transition-all rounded-xl hover:shadow-lg shadow-md relative overflow-hidden"
+      className="group flex w-35 md:w-auto flex-col hover:-translate-y-1 transition-all rounded-xl hover:shadow-lg shadow-md relative overflow-hidden"
       onClick={(e) => handleNavigate(e, id)}
     >
       {discountPercentage && (

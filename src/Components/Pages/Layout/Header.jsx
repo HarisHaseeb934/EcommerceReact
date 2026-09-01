@@ -21,8 +21,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef(null);
 
-
-
   const debounceValue = useDebounce(search.trim(), 500);
 
   const {
@@ -49,7 +47,7 @@ const Header = () => {
     const handleClickOutside = (event) => {
       if (!searchRef.current.contains(event.target)) {
         setIsOpen(false);
-        isShowsetSearch(false)
+        isShowsetSearch(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -66,7 +64,7 @@ const Header = () => {
 
         <div
           ref={searchRef}
-          className={`${isShowsearch ? "absolute" : "hidden"} top-19 right-0 md:static md:w-auto md:flex-1 md:max-w-md md:mx-6 z-50`}
+          className={`${isShowsearch ? "absolute" : "hidden"} top-19 right-0 md:block md:static md:w-auto md:flex-1 md:max-w-md md:mx-6 z-50`}
         >
           <form
             onSubmit={handleSearchSubmit}
@@ -99,7 +97,6 @@ const Header = () => {
 
           {isOpen && debounceValue && (
             <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-slate-100 overflow-hidden z-50 max-h-[80vh] flex flex-col">
-
               {!isLoading &&
                 !isError &&
                 searchResult?.products?.length === 0 && (
@@ -113,7 +110,7 @@ const Header = () => {
                   <ul className="flex gap-4 pb-2">
                     {searchResult.products.map((product) => (
                       <li
-                        key={product.id || product._id}
+                        key={product.id}
                         className="min-w-[200px] max-w-[220px] flex-shrink-0"
                         onClick={() => setIsOpen(false)}
                       >
@@ -126,9 +123,15 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className="flex items-center text-2xl gap-5 md:gap-7">
-          <button className="md:hidden" onClick={() => isShowsetSearch(prev => !prev)}>
-            <CiSearch/>
+        <div className="flex items-center gap-5 md:gap-7">
+          <button
+            className="md:hidden"
+            onMouseDown={(e) => {
+              e.stopPropagation();
+              isShowsetSearch((prev) => !prev);
+            }}
+          >
+            <CiSearch className="text-[16px]"/>
           </button>
           <NavLink className="relative" to="/favourites">
             {favQuantity > 0 && (
@@ -136,7 +139,7 @@ const Header = () => {
                 {favQuantity}
               </span>
             )}
-            <CiHeart className="text-[14px] md:text-base"/>
+            <CiHeart className="text-[16px] md:text-xl" />
           </NavLink>
           <NavLink className="relative" to="/cart">
             {cartQuantity > 0 && (
@@ -144,13 +147,13 @@ const Header = () => {
                 {cartQuantity}
               </span>
             )}
-            <IoCartOutline className="text-[14px] md:text-base"/>
+            <IoCartOutline className="text-[16px] md:text-xl" />
           </NavLink>
           <NavLink
             className="bg-primary p-1 md:p-1.5 text-xl text-white rounded-full hover:opacity-90 transition-opacity"
             to="/profile"
           >
-            <IoPersonOutline className="text-[14px] md:text-base" />
+            <IoPersonOutline className="text-[16px] md:text-lg" />
           </NavLink>
         </div>
       </div>

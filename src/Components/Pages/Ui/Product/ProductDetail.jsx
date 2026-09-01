@@ -74,20 +74,20 @@ const ProductDetail = () => {
       <div className="max-w-6xl w-full m-auto flex flex-col">
         <div className="flex gap-5">
           <button
-            className={`flex items-center gap-5 p-2 ${isReview ? "bg-blue-500 text-white font-medium rounded-2xl" : ""}`}
+            className={`flex items-center gap-4 py-1 md:py-2 px-3 ${isReview ? "bg-primary text-white rounded-3xl" : "border-primary border rounded-3xl"}`}
             onClick={() => setIsReviews((prev) => !prev)}
           >
-            <span className="text-xl font-light text-slate-700 font-semibold">
+            <span className="text-xs md:text-md">
               Reviews
             </span>
             <span
-              className={`text-sm font-light bg-sky-100 size-6 flex items-center justify-center rounded-full ${isReview ? "text-black" : ""}`}
+              className={`text-[12px] md:text-sm font-semibold bg-sky-100 size-4 md:size-6 flex items-center justify-center rounded-full ${isReview ? "text-black" : ""}`}
             >
               {product?.reviews.length}
             </span>
           </button>
           <button
-            className={`flex items-center gap-5 p-2 ${isReview ? "" : "bg-blue-500 text-white font-medium rounded-2xl"}`}
+            className={`flex items-center gap-4 py-2 px-3 text-xs md:text-md ${isReview ? "border-primary border rounded-3xl" : "bg-primary text-white rounded-3xl"}`}
             onClick={() => setIsReviews((prev) => !prev)}
           >
             Specification
@@ -275,7 +275,7 @@ const Detail = ({ product }) => {
 
 const Reviews = ({ reviews }) => {
   return (
-    <div className="flex flex-col gap-5 mt-4">
+    <div className="flex flex-col gap-5 mt-6">
       <ul className="flex flex-col gap-3">
         {reviews &&
           reviews.map((review, index) => {
@@ -283,16 +283,16 @@ const Reviews = ({ reviews }) => {
               review;
             return (
               <li
-                className="flex flex-col gap-1 inset-shadow-sm/30 rounded-2xl p-2"
+                className="flex flex-col  md:gap-1 shadow-lg rounded-2xl p-1 md:p-2"
                 key={index}
               >
                 <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <div className="bg-slate-400 flex items-center size-10 font-bold justify-center rounded-full ">
+                  <div className="flex items-center gap-1 md:gap-2">
+                    <div className="bg-primary text-white flex items-center size-6 md:size-10 font-semibold md:font-bold justify-center rounded-full ">
                       {reviewerName.slice(0, 1)}
                     </div>
                     <div>
-                      <p className="text-xs text-slate-500">{reviewerName}</p>
+                      <p className="text-xs text-black font-semibold">{reviewerName}</p>
                       <p className="text-xs text-slate-500">{reviewerEmail}</p>
                     </div>
                   </div>
@@ -300,8 +300,8 @@ const Reviews = ({ reviews }) => {
                     <StarRating initialRating={rating} size={16} />
                   </div>
                 </div>
-                <div className="p-3 text-[14px]">{comment}</div>
-                <div className="p-3 text-[10px]">{date.split("T")[0]}</div>
+                <div className="p-3 text-[12px] md:text-[14px]">{comment}</div>
+                <div className="p-3 text-[8px] md:text-[10px]">{date.split("T")[0]}</div>
               </li>
             );
           })}
@@ -312,22 +312,22 @@ const Reviews = ({ reviews }) => {
 
 const Specification = ({ brand, category, description, meta, weight }) => {
   return (
-    <div className="flex items-center justify-between flex-col md:flex-row  mt-4">
-      <div className="max-w-xl w-full justify-between">
-        <h1>
-          <span className="font-bold">Brand: </span>
+    <div className="flex items-center justify-between flex-col md:flex-row  mt-6">
+      <div className="max-w-xl w-full justify-between flex flex-col gap-2">
+        <h1 className="text-xs text-sm">
+          <span className="text-xs text-sm font-semibold">Brand: </span>
           {brand}
         </h1>
-        <p>
-          <span className="font-bold">Category: </span>
+        <p className="text-xs text-sm">
+          <span className="text-xs text-sm font-semibold">Category: </span>
           {category}
         </p>
-        <p>
-          <span className="font-bold">Description: </span>
+        <p className="text-xs text-sm">
+          <span className="text-xs text-sm font-semibold">Description: </span>
           {description}
         </p>
-        <p>
-          <span className="font-bold">Weight: </span>
+        <p className="text-xs text-sm">
+          <span className="text-xs text-sm font-semibold">Weight: </span>
           {weight}
         </p>
       </div>

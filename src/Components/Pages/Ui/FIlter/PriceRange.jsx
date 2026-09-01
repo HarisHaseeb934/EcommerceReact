@@ -25,11 +25,11 @@ const PriceRange = ({onChange}) => {
         )}
       </button>
       {!isHide && (
-        <div className="transition-all transition-discrete duration-300 translate-y-0 opacity-100 starting: starting:opacity-0 starting:-translate-y-2">
+        <div className="my-2 transition-all transition-discrete duration-300 translate-y-0 opacity-100 starting: starting:opacity-0 starting:-translate-y-2">
           <div className="flex">
-            <div>1$</div>
+            <div className="text-[14px]">1$</div>
             -
-            <div>{range}$</div>
+            <div className="text-[14px]">{range}$</div>
           </div>
           <div>
             <input

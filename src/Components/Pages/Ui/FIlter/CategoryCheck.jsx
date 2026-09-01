@@ -37,7 +37,7 @@ const CategoryCheck = ({ onChange }) => {
         )}
       </button>
       {!isHide && (
-        <ul className="flex flex-col gap-2 transition-all transition-discrete duration-300 translate-y 0 opacity-100 starting:opacity-0 starting:-translate-y-2">
+        <ul className="flex flex-col gap-2 transition-all my-2 transition-discrete duration-300 translate-y 0 opacity-100 starting:opacity-0 starting:-translate-y-2">
           {categories?.map((item, index) => {
             return (
               <li key={index} className="flex gap-2 items-center">

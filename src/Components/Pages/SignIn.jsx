@@ -27,7 +27,9 @@ const SignIn = () => {
             Create Account
           </button>
         </div>
-        <form className={`w-[80%] gap-4 mt-5 ${isSignIn ? "flex flex-col" : "grid grid-cols-1 md:grid-cols-2"}`}>
+        <form
+          className={`w-[80%] gap-4 mt-5 ${isSignIn ? "flex flex-col" : "grid grid-cols-1 md:grid-cols-2"}`}
+        >
           {isSignIn && (
             <>
               <Input
@@ -49,22 +51,22 @@ const SignIn = () => {
 
           {!isSignIn && (
             <>
-                <Input
-                  type={"text"}
-                  placeholder={"First Name"}
-                  htmlFor={"firstName"}
-                  input={"bg-[#f2f3ff] px-3 py-2 w-full text-sm"}
-                  div={"w-full md:col-span-1"}
-                  className={"w-full outline-none"}
-                />
-                <Input
-                  type={"text"}
-                  placeholder={"Last Name"}
-                  htmlFor={"lastName"}
-                  input={"bg-[#f2f3ff] px-3 py-2 w-full text-sm"}
-                  div={"w-full md:col-span-1"}
-                  className={"w-full outline-none"}
-                />
+              <Input
+                type={"text"}
+                placeholder={"First Name"}
+                htmlFor={"firstName"}
+                input={"bg-[#f2f3ff] px-3 py-2 w-full text-sm"}
+                div={"w-full md:col-span-1"}
+                className={"w-full outline-none"}
+              />
+              <Input
+                type={"text"}
+                placeholder={"Last Name"}
+                htmlFor={"lastName"}
+                input={"bg-[#f2f3ff] px-3 py-2 w-full text-sm"}
+                div={"w-full md:col-span-1"}
+                className={"w-full outline-none"}
+              />
               <Input
                 type={"email"}
                 placeholder={"you@example.com"}

@@ -4,7 +4,7 @@ import Filter from "./Ui/FIlter/Filter";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import ProductCard from "./Ui/Product/ProductCard";
-import { SkeletonLosder } from "./Ui/SekeltonLoader";
+import { SkeletonLosder } from "./Ui/Loader/SekeltonLoader";
 
 const CategoryProduct = () => {
   const { slug } = useParams();

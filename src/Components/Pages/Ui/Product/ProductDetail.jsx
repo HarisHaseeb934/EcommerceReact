@@ -8,7 +8,7 @@ import StarRating from "../FIlter/StarRating";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "../../../Api/axiosInstance";
-import { SkeletonLosder } from "../SekeltonLoader";
+import { SkeletonLosder } from "../Loader/SekeltonLoader";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../../Store/Cart/cartSlice";
 import Alert from "../Alert";

@@ -1,13 +1,13 @@
 import { FaCartPlus } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import Star from "../Star";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../../Store/Cart/cartSlice";
 import { addToFavourites, removeFromFavourites } from "../../../Store/Favourites/favouritesSlice";
 
-const ProductCard = ({ product, setAlreadyAdded, alreadyAdded }) => {
+const ProductCard = ({ product, setAlreadyAdded, alreadyAdded,w = "md:w-auto" }) => {
   const {
     id,
     thumbnail,
@@ -93,7 +93,7 @@ const ProductCard = ({ product, setAlreadyAdded, alreadyAdded }) => {
 
   return (
     <div
-      className="group flex w-35 md:w-auto flex-col hover:-translate-y-1 transition-all rounded-xl hover:shadow-lg shadow-md relative overflow-hidden"
+      className={`group flex w-35 ${w} flex-col hover:-translate-y-1 transition-all rounded-xl hover:shadow-lg shadow-md relative overflow-hidden`}
       onClick={(e) => handleNavigate(e, id)}
     >
       {discountPercentage && (
@@ -129,7 +129,7 @@ const ProductCard = ({ product, setAlreadyAdded, alreadyAdded }) => {
         </div>
         <div className="flex justify-between items-center py-1">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-[10px] md:text-base">${price}</span>
+            <span className="font-bold text-[10px] md:text-[14px]">${price}</span>
             {discountPercentage > 0 && (
               <span className="text-[10px] md:text-[14px] text-[#7A788A] line-through">
                 ${original(price, discountPercentage)}

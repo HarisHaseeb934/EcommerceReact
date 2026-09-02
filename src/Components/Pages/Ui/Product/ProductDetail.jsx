@@ -5,7 +5,7 @@ import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { MdOutlineAssignmentReturn } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import StarRating from "../FIlter/StarRating";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "../../../Api/axiosInstance";
 import { SkeletonLosder } from "../Loader/SekeltonLoader";
@@ -77,9 +77,7 @@ const ProductDetail = () => {
             className={`flex items-center gap-4 py-1 md:py-2 px-3 ${isReview ? "bg-primary text-white rounded-3xl" : "border-primary border rounded-3xl"}`}
             onClick={() => setIsReviews((prev) => !prev)}
           >
-            <span className="text-xs md:text-md">
-              Reviews
-            </span>
+            <span className="text-xs md:text-md">Reviews</span>
             <span
               className={`text-[12px] md:text-sm font-semibold bg-sky-100 size-4 md:size-6 flex items-center justify-center rounded-full ${isReview ? "text-black" : ""}`}
             >
@@ -137,6 +135,8 @@ const Detail = ({ product }) => {
     return (price / decimal).toFixed(2);
   }
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (!alreadyAdded.show) return;
     const timer = setTimeout(() => {
@@ -146,7 +146,12 @@ const Detail = ({ product }) => {
     return () => clearTimeout(timer);
   }, [alreadyAdded.show]);
 
-  const handleAddToCart = () => {
+  function handleBuyNow() {
+    handleAddToCart();
+    navigate("/checkout");
+  }
+
+  function handleAddToCart() {
     const isItemInCart = products.some((item) => item.id === id);
 
     if (isItemInCart) {
@@ -169,7 +174,7 @@ const Detail = ({ product }) => {
         show: true,
       });
     }
-  };
+  }
 
   // console.log(products);
 
@@ -238,9 +243,12 @@ const Detail = ({ product }) => {
           <IoCartOutline className="text-xl" /> Add to Cart
         </button>
 
-        <NavLink to={"/checkout"} className="w-full block text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 rounded-xl border border-slate-200 transition-colors">
+        <button
+          onClick={handleBuyNow}
+          className="w-full text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 rounded-xl border border-slate-200 transition-colors"
+        >
           Buy Now
-        </NavLink>
+        </button>
       </div>
 
       <div className="grid grid-cols-2 gap-y-3 gap-x-4 p-2">
@@ -292,7 +300,9 @@ const Reviews = ({ reviews }) => {
                       {reviewerName.slice(0, 1)}
                     </div>
                     <div>
-                      <p className="text-xs text-black font-semibold">{reviewerName}</p>
+                      <p className="text-xs text-black font-semibold">
+                        {reviewerName}
+                      </p>
                       <p className="text-xs text-slate-500">{reviewerEmail}</p>
                     </div>
                   </div>
@@ -301,7 +311,9 @@ const Reviews = ({ reviews }) => {
                   </div>
                 </div>
                 <div className="p-3 text-[12px] md:text-[14px]">{comment}</div>
-                <div className="p-3 text-[8px] md:text-[10px]">{date.split("T")[0]}</div>
+                <div className="p-3 text-[8px] md:text-[10px]">
+                  {date.split("T")[0]}
+                </div>
               </li>
             );
           })}

@@ -107,11 +107,11 @@ const Header = () => {
 
               {searchResult?.products?.length > 0 && (
                 <div className="p-4 overflow-x-auto">
-                  <ul className="flex gap-4 pb-2">
+                  <ul className="flex gap-4 pb-2 overflow-x-auto snap-x">
                     {searchResult.products.map((product) => (
                       <li
                         key={product.id}
-                        className="min-w-[200px] max-w-[220px] flex-shrink-0"
+                        className="min-w-[200px] max-w-[220px] flex-shrink-0 snap-center"
                         onClick={() => setIsOpen(false)}
                       >
                         <ProductCard product={product} />

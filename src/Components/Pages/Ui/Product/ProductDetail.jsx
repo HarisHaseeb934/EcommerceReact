@@ -238,7 +238,7 @@ const Detail = ({ product }) => {
           <IoCartOutline className="text-xl" /> Add to Cart
         </button>
 
-        <NavLink to={"/checkout"} className="w-full block bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 rounded-xl border border-slate-200 transition-colors">
+        <NavLink to={"/checkout"} className="w-full block text-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 rounded-xl border border-slate-200 transition-colors">
           Buy Now
         </NavLink>
       </div>

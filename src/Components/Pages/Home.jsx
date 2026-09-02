@@ -4,7 +4,7 @@ import HomeSections from "./Ui/HomeSections";
 const Home = () => {
   return (
     <section className="w-full">
-      <div className="bg-[url(BG.jpg)] bg-center bg-no-repeat bg-fill bg-cover">
+      <div className="bg-[url('/BG.jpg')] bg-center bg-no-repeat bg-fill bg-cover">
         <div className="bg-linear-to-t from-surface/80 via-surface/40 to-transparent">
           <div className="m-auto max-w-container-max text-center py-40 md:p-50 lg:py-60 px-margin-mobile md:px-margin-desktop flex flex-col justify-center items-center gap-stack-md">
             <h1 className="text-display-lg-mobile md:text-display-lg text-on-surface font-sans">

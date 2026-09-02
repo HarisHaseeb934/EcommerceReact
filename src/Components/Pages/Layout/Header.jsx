@@ -64,7 +64,7 @@ const Header = () => {
 
         <div
           ref={searchRef}
-          className={`${isShowsearch ? "absolute" : "hidden"} top-30 right-0 md:block md:static md:w-auto md:flex-1 md:max-w-md md:mx-6 z-50`}
+          className={`${isShowsearch ? "absolute" : "hidden"} top-20 right-0 md:block md:static md:w-auto md:flex-1 md:max-w-md md:mx-6 z-50`}
         >
           <form
             onSubmit={handleSearchSubmit}

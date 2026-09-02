@@ -35,14 +35,14 @@ const ProductCard = ({ product, setAlreadyAdded, alreadyAdded,w = "md:w-auto" })
     e.stopPropagation();
     const isIteminCart = products.some((pro) => pro.id === product.id);
     if (isIteminCart) {
-      setAlreadyAdded({
+      setAlreadyAdded?.({
         message: "This product is already in your cart",
         className: "border-amber-500 text-amber-700",
         show: true,
       });
     } else {
       dispatch(addToCart({ ...product, quantity: 1 }));
-      setAlreadyAdded({
+      setAlreadyAdded?.({
         message: "Added to cart successfully!",
         className: "border-emerald-500 text-emerald-600",
         show: true,
@@ -57,14 +57,14 @@ const ProductCard = ({ product, setAlreadyAdded, alreadyAdded,w = "md:w-auto" })
     );
     if (isIteminFavourites) {
       dispatch(removeFromFavourites(product));
-      setAlreadyAdded({
+      setAlreadyAdded?.({
         message: "Rmove from favourites successfully!",
         className: "border-emerald-500 text-emerald-600",
         show: true,
       });
     }else {
       dispatch(addToFavourites(product));
-      setAlreadyAdded({
+      setAlreadyAdded?.({
         message: "Added to favourites successfully!",
         className: "border-emerald-500 text-emerald-600",
         show: true,

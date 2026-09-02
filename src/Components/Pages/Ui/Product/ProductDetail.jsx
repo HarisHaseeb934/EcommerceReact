@@ -5,7 +5,7 @@ import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { MdOutlineAssignmentReturn } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import StarRating from "../FIlter/StarRating";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "../../../Api/axiosInstance";
 import { SkeletonLosder } from "../Loader/SekeltonLoader";
@@ -238,9 +238,9 @@ const Detail = ({ product }) => {
           <IoCartOutline className="text-xl" /> Add to Cart
         </button>
 
-        <button className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 rounded-xl border border-slate-200 transition-colors">
+        <NavLink to={"/checkout"} className="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-3 rounded-xl border border-slate-200 transition-colors">
           Buy Now
-        </button>
+        </NavLink>
       </div>
 
       <div className="grid grid-cols-2 gap-y-3 gap-x-4 p-2">

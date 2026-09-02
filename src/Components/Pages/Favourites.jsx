@@ -9,7 +9,7 @@ const Favourites = () => {
   const dispatch = useDispatch();
   return (
     <section className="w-full bg-surface-container-low text-on-surface min-h-full">
-      <div className="max-w-container-max w-full mx-auto flex flex-col p-margin-mobile md:p-margin-desktop gap-stack-lg">
+      <div className="max-w-7xl w-full mx-auto flex flex-col p-margin-mobile md:p-margin-desktop gap-stack-lg">
         <div>
           <h1 className="text-display-lg-mobile md:text-display-lg font-bold">
             Your Favourites

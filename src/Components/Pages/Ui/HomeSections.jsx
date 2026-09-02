@@ -27,10 +27,10 @@ const HomeSections = ({ slug, title }) => {
       {isLoading ? (
         <SkeletonLosder />
       ) : (
-        <ul className="overflow-auto flex gap-3 py-3">
+        <ul className="overflow-auto flex gap-3 py-3 snap-both">
           {category?.products.map((pro, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="snap-center">
                 <ProductCard product={pro} w="md:w-60" />
               </li>
             );
